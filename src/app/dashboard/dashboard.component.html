@@ -1,0 +1,13 @@
+<div *ngFor="let user of ($users | async).users">
+  <button class="btn btn-sm btn-danger" (click)="removeUser(user.id)">
+    Delete
+  </button>
+  {{ user.id }}-{{ user.name }}
+</div>
+
+<button class="btn btn-small btn-primary mt-5" (click)="addNew()">
+  Add New
+</button>
+<button class="btn btn-small btn-primary mt-5" (click)="updateUser()">
+  Update User=1
+</button>
