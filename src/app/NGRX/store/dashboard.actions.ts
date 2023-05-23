@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import Users from 'src/app/models/users.model';
+import Users from 'src/app/NGRX/models/users.model';
 
 export const WRITE_INITIAL_STATE = 'WRITE INITIAL STATE';
 export const ADD_NEW_USER = 'ADD NEW USER';

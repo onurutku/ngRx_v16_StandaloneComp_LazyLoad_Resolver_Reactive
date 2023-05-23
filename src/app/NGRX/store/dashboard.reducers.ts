@@ -1,4 +1,4 @@
-import Users from 'src/app/models/users.model';
+import Users from 'src/app/NGRX/models/users.model';
 import * as actionTypes from './dashboard.actions';
 import { Action } from '@ngrx/store';
 

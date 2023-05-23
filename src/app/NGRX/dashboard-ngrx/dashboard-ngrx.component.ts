@@ -5,20 +5,20 @@ import { CommonModule } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import Users from '../models/users.model';
 import { Observable } from 'rxjs';
-import { _userMock } from './../mocks/user.mock';
-import { _updateUser } from './../mocks/user.mock';
+import { _userMock } from '../mocks/user.mock';
+import { _updateUser } from '../mocks/user.mock';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
+  selector: 'app-ngrx-dashboard',
+  templateUrl: './dashboard-ngrx.component.html',
+  styleUrls: ['./dashboard-ngrx.component.scss'],
   standalone: true,
   providers: [],
   imports: [CommonModule, HttpClientModule],
 })
-export class DashboardComponent {
+export class DashboardNgrxComponent {
   $users: Observable<any> = this.store.select('users');
 
   constructor(

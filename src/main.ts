@@ -3,15 +3,15 @@ import { provideStore } from '@ngrx/store';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { Routes, provideRouter } from '@angular/router';
-import { dataReducers } from './app/store/dashboard.reducers';
-import { DashboardResolverService } from './app/services/dashboard-resolver.service';
+import { dataReducers } from './app/NGRX/store/dashboard.reducers';
+import { DashboardResolverService } from './app/NGRX/services/dashboard-resolver.service';
 import { provideHttpClient } from '@angular/common/http';
 const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./app/dashboard/dashboard.component').then(
-        (m) => m.DashboardComponent
+      import('./app/NGRX/dashboard-ngrx/dashboard-ngrx.component').then(
+        (m) => m.DashboardNgrxComponent
       ),
     resolve: { users: DashboardResolverService },
   },
