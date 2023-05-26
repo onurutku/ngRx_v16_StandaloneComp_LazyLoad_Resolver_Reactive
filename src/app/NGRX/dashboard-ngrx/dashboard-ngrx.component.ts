@@ -7,7 +7,7 @@ import Users from '../models/users.model';
 import { Observable } from 'rxjs';
 import { _userMock } from '../mocks/user.mock';
 import { _updateUser } from '../mocks/user.mock';
-import { ActivatedRoute } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./dashboard-ngrx.component.scss'],
   standalone: true,
   providers: [],
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, RouterModule],
 })
 export class DashboardNgrxComponent {
   $users: Observable<any> = this.store.select('users');
@@ -24,8 +24,7 @@ export class DashboardNgrxComponent {
   constructor(
     private store: Store<{ users: { users: Users[] } }>,
     private service: DashboardService,
-    private readonly destroyRef: DestroyRef,
-    private readonly route: ActivatedRoute
+    private readonly destroyRef: DestroyRef
   ) {}
   addNew(): void {
     this.service

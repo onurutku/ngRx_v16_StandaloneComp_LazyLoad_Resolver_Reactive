@@ -4,7 +4,6 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { Routes, provideRouter } from '@angular/router';
 import { dataReducers } from './app/NGRX/store/dashboard.reducers';
-import { DashboardResolverService } from './app/NGRX/services/dashboard-resolver.service';
 import { provideHttpClient } from '@angular/common/http';
 const routes: Routes = [
   {
@@ -13,7 +12,20 @@ const routes: Routes = [
       import('./app/NGRX/dashboard-ngrx/dashboard-ngrx.component').then(
         (m) => m.DashboardNgrxComponent
       ),
-    resolve: { users: DashboardResolverService },
+  },
+  {
+    path: 'rxjs-subjects',
+    loadComponent: () =>
+      import(
+        './app/REACTIVE_RXJS_SUBJECTS/dashboard-rxjs/dashboard-rxjs.component'
+      ).then((m) => m.DashboardRxjsComponent),
+  },
+  {
+    path: 'rxjs-signals',
+    loadComponent: () =>
+      import(
+        './app/REACTIVE_SIGNALS/dashboard-signals/dashboard-signals.component'
+      ).then((m) => m.DashboardSignalsComponent),
   },
 ];
 // platformBrowserDynamic()

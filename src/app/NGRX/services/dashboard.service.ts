@@ -15,15 +15,15 @@ export class DashboardService {
   constructor(
     private http: HttpClient,
     private store: Store<{ users: { users: Users[] } }>
-  ) {}
-  getUsers(): Observable<Users[]> {
-    return this.http
+  ) {
+    this.getUsers();
+  }
+  getUsers(): void {
+    this.http
       .get<Users[]>('https://jsonplaceholder.typicode.com/users')
-      .pipe(
-        tap((users: Users[]) => {
-          this.store.dispatch(new DashboardInitialState(users));
-        })
-      );
+      .subscribe((users: Users[]) => {
+        this.store.dispatch(new DashboardInitialState(users));
+      });
   }
   addNewUser(userMock: Users): Observable<Users> {
     return this.http
@@ -51,8 +51,6 @@ export class DashboardService {
       )
       .pipe(
         tap((response) => {
-          console.log(response);
-
           this.store.dispatch(new UpdateUser(updateUser));
         })
       );

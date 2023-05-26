@@ -1,6 +1,6 @@
-<button [routerLink]="['/rxjs-subjects']">RXJS SUBJECTS</button>
+<button [routerLink]="['']">NGRX PAGE</button>
 <button [routerLink]="['/rxjs-signals']">RXJS SIGNALS</button>
-<div *ngFor="let user of ($users | async).users">
+<div *ngFor="let user of $users | async">
   <button class="btn btn-sm btn-danger" (click)="removeUser(user.id)">
     Delete
   </button>
