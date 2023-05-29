@@ -1,4 +1,4 @@
-import { Component, DestroyRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef } from '@angular/core';
 import { DashboardService } from '../services/dashboard.service';
 import { Store } from '@ngrx/store';
 import { CommonModule } from '@angular/common';
@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
   standalone: true,
   providers: [],
   imports: [CommonModule, HttpClientModule, RouterModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardNgrxComponent {
   $users: Observable<any> = this.store.select('users');

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import Users from 'src/app/NGRX/models/users.model';
 import DashboardRxJsService from '../services/dashboard-rxjs.service';
@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./dashboard-rxjs.component.scss'],
   standalone: true,
   imports: [CommonModule, RouterModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardRxjsComponent {
   $users: Observable<Users[]> = this.service.convertToObservable();

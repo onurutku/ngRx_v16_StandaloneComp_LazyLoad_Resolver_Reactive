@@ -27,6 +27,13 @@ const routes: Routes = [
         './app/REACTIVE_SIGNALS/dashboard-signals/dashboard-signals.component'
       ).then((m) => m.DashboardSignalsComponent),
   },
+  {
+    path: 'non-state',
+    loadComponent: () =>
+      import(
+        './app/NON-STATE/dashboard-nonstate/dashboard-nonstate.component'
+      ).then((m) => m.DashboardNonStateComponent),
+  },
 ];
 // platformBrowserDynamic()
 //   .bootstrapModule(AppModule)

@@ -1,5 +1,7 @@
 <button [routerLink]="['']">NGRX PAGE</button>
 <button [routerLink]="['/rxjs-subjects']">RXJS SUBJECTS</button>
+<button [routerLink]="['/non-state']">NON-STATE</button>
+
 <div *ngFor="let user of $users | async">
   <button class="btn btn-sm btn-danger" (click)="removeUser(user.id)">
     Delete

@@ -1,4 +1,4 @@
-import { Component, effect, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import Users from 'src/app/NGRX/models/users.model';
 import DashboardSignalsService from '../services/dashboard-signals.service';
@@ -13,6 +13,7 @@ import { _updateUser } from '../../NGRX/mocks/user.mock';
   styleUrls: ['./dashboard-signals.component.scss'],
   standalone: true,
   imports: [CommonModule, RouterModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardSignalsComponent {
   $users: Observable<Users[]> = this.service.convertToObservable();

@@ -11,5 +11,5 @@ import { RouterModule } from '@angular/router';
   imports: [RouterModule, HttpClientModule, CommonModule],
 })
 export class AppComponent {
-  title = 'ngv16';
+  title = 'ngv16-holding-states';
 }
